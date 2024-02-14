@@ -11,7 +11,7 @@ from guardrails.validator_base import (
 from litellm import completion
 
 
-@register_validator(name="guardrails/unusual-prompt", data_type="string")
+@register_validator(name="guardrails/unusual_prompt", data_type="string")
 class UnusualPrompt(Validator):
     """Validates whether an input prompt to an LLM is unusual.
 

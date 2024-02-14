@@ -1,5 +1,5 @@
 [project]
-name = "unusual-prompt"
+name = "unusual_prompt"
 version = "0.0.0"
 description = "A Guardrails AI validator that validates a prompt for unusualness and trickery."
 authors = [

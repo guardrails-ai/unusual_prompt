@@ -15,14 +15,14 @@ This validator validates a prompt is free from jailbreaking / psychological prom
 ## Installation
 
 ```bash
-$ guardrails hub install hub://guardrails/unusual-prompt
+$ guardrails hub install hub://guardrails/unusual_prompt
 ```
 
 ## Usage Examples
 
 ### Validating string output via Python
 
-In this example, we use the `unusual-prompt` validator on any prompt.
+In this example, we use the `unusual_prompt` validator on any prompt.
 
 ```python
 # Import Guard and Validator
