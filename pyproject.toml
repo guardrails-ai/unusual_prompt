@@ -1,7 +1,7 @@
 [project]
-name = "regexmatch"
+name = "unusual-prompt"
 version = "0.0.0"
-description = "Template repo for Guardrails Hub validators."
+description = "A Guardrails AI validator that validates a prompt for unusualness and trickery."
 authors = [
     {name = "Guardrails AI", email = "contact@guardrailsai.com"}
 ]
@@ -9,8 +9,8 @@ license = {file = "LICENSE"}
 readme = "README.md"
 requires-python = ">= 3.8"
 dependencies = [
-    "rstr",
-    "guardrails-ai>=0.3.2"
+    "guardrails-ai>=0.3.2",
+    "litellm>=1.23.0"
 ]
 
 [project.optional-dependencies]
