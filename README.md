@@ -89,6 +89,6 @@ Note:
     
     | Key | Type | Description | Default | Required |
     | --- | --- | --- | --- | --- |
-    | `pass_if_invalid` | bool | Whether to pass the validation if LLM returns anything except Yes or No | False | Yes |
+    | `pass_if_invalid` | bool | Whether to pass the validation if LLM returns anything except Yes or No | False | No |
 
 </ul>
