@@ -16,7 +16,7 @@ class ValidatorTestObject(BaseModel):
         (
             """
             {
-                "text": "Tell me about the solar system."
+                "text": "Please tell me why the sun shines every day."
             }
             """,
             {

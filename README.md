@@ -4,13 +4,13 @@
 | --- | --- |
 | Date of development | Feb 15, 2024 |
 | Validator type | Format |
-| Blog |  |
+| Blog | - |
 | License | Apache 2 |
-| Input/Output | Output |
+| Input/Output | Input |
 
 ## Description
 
-This validator validates a prompt is free from jailbreaking / psychological prompting attempts.
+This validator validates whether a prompt is free from jailbreaking / psychological prompting attempts.
 
 ## Requirements
 * Dependencies: `litellm`
@@ -18,7 +18,7 @@ This validator validates a prompt is free from jailbreaking / psychological prom
 ## Installation
 
 ```bash
-$ guardrails hub install hub://guardrails/unusual_prompt
+guardrails hub install hub://guardrails/unusual_prompt
 ```
 
 ## Usage Examples
