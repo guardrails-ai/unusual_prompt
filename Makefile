@@ -1,8 +1,11 @@
+dev:
+	pip install -e ".[dev]"
+
 lint:
 	ruff check .
 
-tests:
-	pytest ./test
+test:
+	pytest ./tests
 
 type:
 	pyright validator
@@ -10,4 +13,5 @@ type:
 qa:
 	make lint
 	make type
-	make tests
+	# TODO: re-enable this once we have the org environment set up
+	# make test

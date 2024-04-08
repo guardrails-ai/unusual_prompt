@@ -1,3 +1,4 @@
+import os
 from typing import Any, Callable, Dict, Optional
 from warnings import warn
 
@@ -8,7 +9,8 @@ from guardrails.validator_base import (
     Validator,
     register_validator,
 )
-from litellm import completion
+from guardrails.stores.context import get_call_kwarg
+from litellm import completion, get_llm_provider
 
 
 @register_validator(name="guardrails/unusual_prompt", data_type="string")
@@ -85,10 +87,16 @@ class UnusualPrompt(Validator):
         """
         # 0. Create messages
         messages = [{"content": prompt, "role": "user"}]
+        
+        # 0b. Setup auth kwargs if the model is from OpenAI
+        kwargs = {}
+        _model, provider, *_rest = get_llm_provider(self.llm_callable)
+        if provider == "openai":
+            kwargs["api_key"] = get_call_kwarg("api_key") or os.environ.get("OPENAI_API_KEY")
 
         # 1. Get LLM response
         try:
-            response = completion(model=self.llm_callable, messages=messages)
+            response = completion(model=self.llm_callable, messages=messages, **kwargs)
             response = response.choices[0].message.content  # type: ignore
 
             # 2. Strip the response of any leading/trailing whitespaces
