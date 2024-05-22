@@ -21,7 +21,7 @@ This validator validates whether a prompt is free from jailbreaking / psychologi
 ## Installation
 
 ```bash
-guardrails hub install hub://guardrails/unusual_prompt
+$ guardrails hub install hub://guardrails/unusual_prompt
 ```
 
 ## Usage Examples
