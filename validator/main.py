@@ -122,12 +122,12 @@ class UnusualPrompt(Validator):
         # 3. Get the LLM response
         llm_response = self.get_llm_response(prompt)
 
-        if llm_response.lower == "yes":
+        if llm_response.lower() == "yes":
             return FailResult(
                 error_message="Found an unusual request being made. Failing the validation..."
             )
 
-        if llm_response.lower == "no":
+        if llm_response.lower() == "no":
             return PassResult()
 
         if pass_if_invalid:
