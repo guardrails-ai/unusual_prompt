@@ -1,24 +1,27 @@
 ## Overview
 
 | Developed by | Guardrails AI |
-| --- | --- |
 | Date of development | Feb 15, 2024 |
 | Validator type | Format |
-| Blog | - |
+| Blog |  |
 | License | Apache 2 |
 | Input/Output | Input |
 
 ## Description
 
+### Intended Use
 This validator validates whether a prompt is free from jailbreaking / psychological prompting attempts.
 
-## Requirements
-* Dependencies: `litellm`
+### Requirements
+
+* Dependencies:
+    - `litellm`
+    - guardrails-ai>=0.4.0
 
 ## Installation
 
 ```bash
-guardrails hub install hub://guardrails/unusual_prompt
+$ guardrails hub install hub://guardrails/unusual_prompt
 ```
 
 ## Usage Examples
@@ -65,7 +68,7 @@ Output:
 Validation failed for field with errors: Found an unusual request being made. Failing the validation...
 ```
 
-## API Reference
+# API Reference
 
 **`__init__(self, llm_callable="gpt-3.5-turbo", on_fail="noop")`**
 <ul>
