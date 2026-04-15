@@ -124,7 +124,7 @@ class UnusualPrompt(Validator):
 
         if llm_response == "yes":
             return FailResult(
-                error_message="Found an unusual request being made. Failing the validation..."
+                errorMessage="Found an unusual request being made. Failing the validation..."
             )
 
         if llm_response == "no":
@@ -134,5 +134,5 @@ class UnusualPrompt(Validator):
             warn("Invalid response from the evaluator. Passing the validation...")
             return PassResult()
         return FailResult(
-            error_message="Invalid response from the evaluator. Failing the validation..."
+            errorMessage="Invalid response from the evaluator. Failing the validation..."
         )
