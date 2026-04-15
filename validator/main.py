@@ -88,12 +88,12 @@ class UnusualPrompt(Validator):
 
         # 1. Get LLM response
         try:
-            response = completion(model=self.llm_callable, messages=messages, **kwargs)
-            response = response.choices[0].message.content  # type: ignore
+            completion_response = completion(model=self.llm_callable, messages=messages, **kwargs)
+            response: str = completion_response.choices[0].message.content  # type: ignore
 
             # 2. Strip the response of any leading/trailing whitespaces
             # and convert to lowercase
-            response = response.strip(" .").lower()
+            response = response.strip(" .").lower().strip()
         except Exception as e:
             raise RuntimeError(f"Error getting response from the LLM: {e}") from e
 
@@ -122,12 +122,12 @@ class UnusualPrompt(Validator):
         # 3. Get the LLM response
         llm_response = self.get_llm_response(prompt)
 
-        if llm_response.lower().strip() == "yes":
+        if llm_response == "yes":
             return FailResult(
                 error_message="Found an unusual request being made. Failing the validation..."
             )
 
-        if llm_response.lower().strip() == "no":
+        if llm_response == "no":
             return PassResult()
 
         if pass_if_invalid:
