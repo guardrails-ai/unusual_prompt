@@ -1,3 +1,24 @@
+# ⚠️ This validator has moved
+
+This validator now lives in the [Guardrails Hub monorepo](https://github.com/guardrails-ai/guardrails-hub-monorepo/tree/main/unusual_prompt).
+**This repository is archived and no longer maintained** — please open issues and pull
+requests on the monorepo instead.
+
+```bash
+pip install guardrails-ai-unusual-prompt
+```
+
+```python
+from guardrails import Guard
+from guardrails_ai.unusual_prompt import UnusualPrompt
+
+guard = Guard().use(UnusualPrompt)
+```
+
+The registered validator name is unchanged, so existing guards keep working.
+
+---
+
 ## Overview
 
 | Developed by | Guardrails AI |
